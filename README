@@ -1,0 +1,11 @@
+Introduction
+============
+WY_Logger is a C library that provides a simple API to log messages of the form:
+
+This library has the following key characteristics:
+- Supports printf() and fprintf() style APIs.
+- Supports logging to stdout as well as to files simultaneously.
+- TODO: Planned future support for logging to sockets.  
+- Uses the MIT license so it is easy to integrate into any application.
+
+For more information, refer to docs/README.md

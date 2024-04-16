@@ -7,8 +7,9 @@ WY_Logger is a C library that provides a simple API to log messages of the form:
 
 This library has the following key characteristics:
 - Supports printf() and fprintf() style APIs.
+- Include or exclude timestamps in logs.
+- Supports UTC time offsets.
 - Supports logging to stdout as well as to files simultaneously.
-- TODO: Planned future support for logging to sockets.  
 - Uses the MIT license so it is easy to integrate into any application.
 
 File Organisation
@@ -52,7 +53,7 @@ demo.c is easy to read and understand - there is not much more to say about it.
 Implementation Details
 ======================
  
--# Always call wy_logger_init() to initialise the internal buffers in the library.
+-# Always call wy_logger_init() to initialise the internal buffers and time offset in the library.
 -# A buffer size limit must be specified in wy_logger_init() to ensure logging and memory management sanity.
 -# The creation of files for logging is excluded from within the library as the function call is so trivial. This also allows applications to create multiple log files and use the WY_Logger library to log to them.
--# Call wy_logger__clean() to clean up all internal buffers when processing is completed.
+-# Call wy_logger_clean() to clean up all internal buffers when processing is completed.

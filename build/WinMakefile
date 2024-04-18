@@ -1,0 +1,39 @@
+CC = cl
+CFLAGS = /O2 /W4 /GL /std:c17 /nologo
+ARCH = /favor:INTEL64
+SRC = ..\src
+BUILD = ..\build
+OBJS = $(BUILD)\WY_Logger.obj $(BUILD)\WY_File_IO.obj
+API_HEADERS = $(SRC)\WY_Logger.h  
+HEADERS = $(SRC)\WY_Logger.h $(SRC)\WY_File_IO.h
+SRCFILES = $(SRC)\WY_Logger.c $(SRC)\WY_File_IO.c
+TARGETLIB = $(BUILD)\lib_WY_Logger.lib
+DEMO = $(BUILD)\demo.exe
+
+
+#.PHONY: clean distclean object_msg
+
+all: $(TARGETLIB) $(DEMO)
+
+$(DEMO): $(SRC)\demo.c $(API_HEADERS) $(TARGETLIB)
+	@echo Building demo...
+	$(CC) $(CFLAGS) $(ARCH) $(SRC)\demo.c $(TARGETLIB) /Fe:$(DEMO)
+
+$(TARGETLIB): object_msg $(OBJS)
+	@echo Building library...
+	lib /nologo *.obj /out:$(TARGETLIB)
+
+$(OBJS): $(HEADERS) $(SRCFILES)
+	$(CC) $(CFLAGS) $(ARCH) /c $(SRCFILES)
+
+object_msg:
+	@echo Building objects...
+
+clean:
+	@echo Deleting objects...
+	del $(BUILD)\*.obj
+
+distclean: clean
+	@echo Deleting demo and library....
+	del $(BUILD)\demo.exe
+	del $(TARGETLIB)

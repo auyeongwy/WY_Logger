@@ -92,6 +92,6 @@ static inline void wy_logger_settime()
 
     timespec_get(&ts, TIME_UTC); /* Set to UTC. */
     ts.tv_sec += m_time_offset; /* Add the timezone offset. */
-    m_current_buffer_size = (size_t)strftime(m_buffer, m_max_buffer_size, "[%F %T", gmtime(&ts.tv_sec)); /* Get current date and time. */
+    m_current_buffer_size = (unsigned int)strftime(m_buffer, m_max_buffer_size, "[%F %T", gmtime(&ts.tv_sec)); /* Get current date and time. */
     m_current_buffer_size += snprintf(m_buffer+m_current_buffer_size, m_max_buffer_size-m_current_buffer_size, ".%06ld]: ", ts.tv_nsec/1000); /* Fill in the nanoseconds. */
 }

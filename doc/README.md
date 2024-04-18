@@ -6,6 +6,7 @@ WY_Logger is a C library that provides a simple API to log messages of the form:
 \[Date and Time\]: Message
 
 This library has the following key characteristics:
+- Supports Linux and Windows platforms.
 - Supports printf() and fprintf() style APIs.
 - Include or exclude timestamps in logs.
 - Supports UTC time offsets.
@@ -19,18 +20,18 @@ There are 3 directories in the base directory:
 src: Contains all source code files. <br>
 
 build: Contains the following:
-- The Makefile. 
+- Linux and Windows Makefiles. 
 - After compilation, all object, library and demo files will be in this directory. 
 
 doc: Contains the following:
 - A README.md and Doxyfile used by doxygen.
 - By running doxygen using the provided Doxyfile, all HTML documentation will be generated in this directory.
 
-Compilation and Usage
-=====================
-Build the library and demo application by entering the build directory and entering "make". This generates:
-1. A library lib_WY_Logger.a.
-2. A demo application compiled from demo.c named demo.
+Compilation and Use: Linux
+==========================
+A Makefile is provided for compilation. Build the library and demo application by entering the build directory and entering `make`. This generates:
+1. A library *lib_WY_Logger.a*.
+2. A demo application compiled from demo.c named *demo*.
 
 The supplied Makefile defaults to using the following compiler flags. Modify them as required to suit your own build system.<br>
 `CFLAGS = -std=c17 -Wall -Wextra -O3 -flto` <br>
@@ -42,6 +43,26 @@ To clean up object files, run `make clean`. To clean up all files including libr
 How to use the library:
 1. Include WY_Logger.h in your code. 
 2. Link to lib_WY_Logger.a in your build.
+3. And that's it.
+
+For an example, refer to demo.c. This is the best guide to using the library.
+
+Compilation and Use: Windows
+============================
+A WinMakefile is provided for compilation. Build the library and demo application by entering the build directory and entering `nmake /f WinMakefile`. This generates:
+1. A library *lib_WY_Logger.lib*.
+2. A demo application compiled from demo.c named *demo.exe*.
+
+The supplied WinMakefile defaults to using the following compiler flags. Modify them as required to suit your own build system.<br>
+`CFLAGS = /O2 /W4 /GL /std:c17 /nologo` <br>
+`ARCH = /favor:INTEL64` <br>
+**NOTE**: Obviously the `/GL` and `/favor:INTEL64` options must be changed where necessary! 
+
+To clean up object files, run `nmake /f WinMakefile clean`. To clean up all files including library files and the demo application, run `nmake /f WinMakefile  distclean`.
+
+How to use the library:
+1. Include WY_Logger.h in your code. 
+2. Link to lib_WY_Logger.lib in your build.
 3. And that's it.
 
 For an example, refer to demo.c. This is the best guide to using the library.

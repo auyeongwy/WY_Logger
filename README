@@ -3,6 +3,7 @@ Introduction
 WY_Logger is a C library that provides a simple API to log messages of the form:
 
 This library has the following key characteristics:
+- Supports Linux and Windows platforms.
 - Supports printf() and fprintf() style APIs.
 - Include or exclude timestamps in logs.
 - Supports UTC time offsets.

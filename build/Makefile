@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -std=c17 -Wall -Wextra -O2
+CFLAGS = -std=c17 -Wall -Wextra -O3 -flto
 ARCH = -march=native
-#CFLAGS = -Wall -std=c17 -fsanitize=address -static-libasan -g3 -march=native
+#CFLAGS = -Wall -std=c17 -fsanitize=address -static-libasan -O3 -g3
 SRC = ../src
 BUILD = ../build
 OBJS = $(BUILD)/WY_Logger.o $(BUILD)/WY_File_IO.o

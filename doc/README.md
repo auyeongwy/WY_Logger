@@ -32,17 +32,19 @@ Build the library and demo application by entering the build directory and enter
 1. A library lib_WY_Logger.a.
 2. A demo application compiled from demo.c named demo.
 
+The supplied Makefile defaults to using the following compiler flags. Modify them as required to suit your own build system.<br>
+`CFLAGS = -std=c17 -Wall -Wextra -O3 -flto` <br>
+`ARCH = -march=native` <br>
+**NOTE**: Obviously the `-flto` and `-march=native` options must be changed where necessary! 
+
+To clean up object files, run `make clean`. To clean up all files including library files and the demo application, run `make distclean`.
+
 How to use the library:
 1. Include WY_Logger.h in your code. 
 2. Link to lib_WY_Logger.a in your build.
 3. And that's it.
 
 For an example, refer to demo.c. This is the best guide to using the library.
-
-The supplied Makefile defaults to using the following compiler flags. Modify them as required to suit your own build system.<br>
-`-std=c17 -Wall -O2 -march=native`
-
-To clean up object files, run `make clean`. To clean up all files including library files and the demo application, run `make distclean`.
 
 Demo application
 ================

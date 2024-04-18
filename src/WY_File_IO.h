@@ -15,6 +15,6 @@
  * @param p_content The content to write to the file.
  * @param p_fp The valid FILE * pointer to write content to.
 */
-void wy_file_append(const unsigned short p_size, const char * restrict p_content, FILE *p_fp);
+void wy_file_append(const unsigned int p_size, const char * restrict p_content, FILE *p_fp);
 
 #endif

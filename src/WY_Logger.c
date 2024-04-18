@@ -19,7 +19,7 @@ static inline void wy_logger_settime();
 
 int wy_logger_init(const unsigned int p_max_size, const unsigned int p_time_offset)
 {
-    if(p_max_size < 128) /* Set a minimum size accepted for the logging buffer. */
+    if((p_max_size < WY_LOGGER_MIN_SIZE) || (p_max_size > WY_LOGGER_MAX_SIZE)) /* Set a minimum and maximum size accepted for the logging buffer. */
         return WY_LOGGER_ERR;
 
     if((m_buffer = malloc(p_max_size)) != NULL) {        

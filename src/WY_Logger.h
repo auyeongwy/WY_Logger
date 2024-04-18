@@ -9,6 +9,8 @@
 
 #define WY_LOGGER_ERR -1 /**< Denotes error status. */
 #define WY_LOGGER_OK 0 /**< Denotes OK status. */
+#define WY_LOGGER_MIN_SIZE 128 /**< Denotes minimum size of the internal string buffer. */
+#define WY_LOGGER_MAX_SIZE 10240 /**< Denotes minimum size of the internal string buffer. */
 
 
 /**

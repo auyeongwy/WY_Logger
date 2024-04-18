@@ -1,5 +1,2 @@
-build/*.o
-build/*.a
-build/demo
-build/log.txt
+build
 doc/html

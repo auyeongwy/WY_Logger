@@ -17,19 +17,19 @@ File Organisation
 =================
 There are 3 directories in the base directory: 
 
-src: Contains all source code files. <br>
+*src*: Contains all source code files. <br>
 
-build: Contains the following:
+*build*: Contains the following:
 - Linux and Windows Makefiles. 
 - After compilation, all object, library and demo files will be in this directory. 
 
-doc: Contains the following:
-- A README.md and Doxyfile used by doxygen.
+*doc*: Contains the following:
+- A *README.md* and *Doxyfile* used by doxygen.
 - By running doxygen using the provided Doxyfile, all HTML documentation will be generated in this directory.
 
 Compilation and Use: Linux
 ==========================
-A Makefile is provided for compilation. Build the library and demo application by entering the build directory and entering `make`. This generates:
+A *Makefile* is provided for compilation. Build the library and demo application by entering the build directory and run `make`. This generates:
 1. A library *lib_WY_Logger.a*.
 2. A demo application compiled from demo.c named *demo*.
 
@@ -42,14 +42,14 @@ To clean up object files, run `make clean`. To clean up all files including libr
 
 How to use the library:
 1. Include WY_Logger.h in your code. 
-2. Link to lib_WY_Logger.a in your build.
+2. Link to *lib_WY_Logger.a* in your build.
 3. And that's it.
 
 For an example, refer to demo.c. This is the best guide to using the library.
 
 Compilation and Use: Windows
 ============================
-A WinMakefile is provided for compilation. Build the library and demo application by entering the build directory and entering `nmake /f WinMakefile`. This generates:
+A *WinMakefile* is provided for compilation. Build the library and demo application by entering the build directory and entering `nmake /f WinMakefile`. This generates:
 1. A library *lib_WY_Logger.lib*.
 2. A demo application compiled from demo.c named *demo.exe*.
 
@@ -62,14 +62,14 @@ To clean up object files, run `nmake /f WinMakefile clean`. To clean up all file
 
 How to use the library:
 1. Include WY_Logger.h in your code. 
-2. Link to lib_WY_Logger.lib in your build.
+2. Link to *lib_WY_Logger.lib* in your build.
 3. And that's it.
 
 For an example, refer to demo.c. This is the best guide to using the library.
 
 Demo application
 ================
-The demo application writes to a log file "log.txt" within the build directory by default.
+The demo application writes to a log file *log.txt* within the build directory by default.
 
 demo.c is easy to read and understand - there is not much more to say about it.
 
